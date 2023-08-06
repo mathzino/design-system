@@ -6,6 +6,10 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.8",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "react": "^18.2.0",
@@ -13,14 +17,15 @@
     "react-hook-form": "^7.45.2",
     "react-scripts": "5.0.1",
     "tailwind-merge": "^1.14.0",
+    "typescript": "^5.1.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "storybook dev -p 6006",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006  ",
     "build-storybook": "storybook build"
   },
   "eslintConfig": {
