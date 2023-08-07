@@ -1,5 +1,8 @@
 # setup project
-npm install
+yarn install
 # start
-npm run start
+yarn start
+
+# start storybook 
+yarn storybook
 
