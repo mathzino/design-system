@@ -12,6 +12,11 @@ export enum TVariantTypography {
   p16 = "p16",
   p12 = "p12",
   p10 = "p10",
+  l18 = "l18",
+  l16 = "l16",
+  l14 = "l14",
+  l12 = "l12",
+  l10 = "l10",
 }
 export enum TFontStyle {
   italic = "italic",
@@ -25,35 +30,31 @@ export enum TFontWeight {
   extraBold = "extrabold",
   black = "black",
 }
-export enum TLineHeight {
-  none = "none",
-  tight = "tight",
-  snug = "snug",
-  normal = "normal",
-  relaxed = "relaxed",
-  loose = "loose",
-}
 
 interface TypographyProps extends React.HTMLAttributes<HTMLParagraphElement>, VariantProps<typeof typographyVariants> {
   variant?: TVariantTypography;
   fontStyle?: TFontStyle;
   fontWeight?: TFontWeight;
-  lineHeight?: TLineHeight;
   children?: ReactNode;
 }
 
 export const typographyVariants = cva("", {
   variants: {
     variant: {
-      h1: "text-[44px]",
-      h2: "text-4xl",
-      h3: "text-[28px]",
-      h4: "text-2xl",
-      h5: "text-xl",
-      p18: "text-lg",
-      p16: "text-base",
-      p12: "text-xs",
-      p10: "text-[10px]",
+      h1: "text-[44px] leading-[82px]",
+      h2: "text-4xl leading-[46px]",
+      h3: "text-[28px] leading-[38px]",
+      h4: "text-2xl leading-[32px]",
+      h5: "text-xl leading-[26px]",
+      p18: "text-lg leading-[27px]",
+      p16: "text-base leading-[24px]",
+      p12: "text-xs leading-[18px]",
+      p10: "text-[10px] leading-[18px]",
+      l18: "text-lg leading-[23px]",
+      l16: "text-base leading-[20px]",
+      l14: "text-sm leading-[17px]",
+      l12: "text-xs leading-[14px]",
+      l10: "text-[10px] leading-[14px]",
     },
     fontWeight: {
       light: "font-light",
@@ -64,14 +65,6 @@ export const typographyVariants = cva("", {
       black: "font-black",
     },
     fontStyle: { italic: "italic", noItalic: "not-italic" },
-    lineHeight: {
-      none: "leading-none",
-      tight: "leading-tight",
-      snug: "leading-snug",
-      normal: "leading-normal",
-      relaxed: "leading-relaxed",
-      loose: "leading-loose",
-    },
   },
   defaultVariants: {
     variant: "p12",
@@ -80,8 +73,8 @@ export const typographyVariants = cva("", {
   },
 });
 
-const Typography: React.FC<TypographyProps> = ({ variant, fontWeight, fontStyle, lineHeight, children, ...props }) => {
-  return <p className={cn(typographyVariants({ variant, fontWeight, fontStyle, lineHeight }))}>{children}</p>;
+const Typography: React.FC<TypographyProps> = ({ variant, fontWeight, fontStyle, children, ...props }) => {
+  return <p className={cn(typographyVariants({ variant, fontWeight, fontStyle, }))}>{children}</p>;
 };
 
 export default Typography;
