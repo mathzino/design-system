@@ -1,6 +1,6 @@
-import Typography, { TFontStyle, TFontWeight, TVariantTypography } from "./typography";
+import Typography, { TFontStyle, TFontWeight, TVariantTypography, TLineHeight } from "./typography";
 import { Meta, StoryObj } from "@storybook/react";
-
+ 
 const meta: Meta<typeof Typography> = {
   title: "Typography",
   component: Typography,
@@ -18,6 +18,10 @@ const meta: Meta<typeof Typography> = {
       options: TFontWeight,
       control: { type: "select" },
     },
+    lineHeight: {
+      options: TLineHeight,
+      control: { type: "select" },
+    },
   },
 };
 export default meta;
@@ -29,6 +33,7 @@ export const Text: Story = {
     variant: TVariantTypography.h1,
     fontStyle: TFontStyle.italic,
     fontWeight: TFontWeight.medium,
+    lineHeight: TLineHeight.normal,
     children: "tes",
   },
 };

@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "../../../lib/utils";
-
+ 
 export enum TVariantTypography {
   h1 = "h1",
   h2 = "h2",
@@ -18,14 +18,27 @@ export enum TFontStyle {
   noItalic = "noItalic",
 }
 export enum TFontWeight {
+  light = "light",
   medium = "medium",
+  semiBold = "semibold",
   bold = "bold",
+  extraBold = "extrabold",
+  black = "black",
+}
+export enum TLineHeight {
+  none = "none",
+  tight = "tight",
+  snug = "snug",
+  normal = "normal",
+  relaxed = "relaxed",
+  loose = "loose",
 }
 
 interface TypographyProps extends React.HTMLAttributes<HTMLParagraphElement>, VariantProps<typeof typographyVariants> {
   variant?: TVariantTypography;
   fontStyle?: TFontStyle;
   fontWeight?: TFontWeight;
+  lineHeight?: TLineHeight;
   children?: ReactNode;
 }
 
@@ -43,10 +56,22 @@ export const typographyVariants = cva("", {
       p10: "text-[10px]",
     },
     fontWeight: {
+      light: "font-light",
       medium: "font-normal",
+      semibold: "font-semibold",
       bold: "font-bold",
+      extrabold: "font-extrabold",
+      black: "font-black",
     },
     fontStyle: { italic: "italic", noItalic: "not-italic" },
+    lineHeight: {
+      none: "leading-none",
+      tight: "leading-tight",
+      snug: "leading-snug",
+      normal: "leading-normal",
+      relaxed: "leading-relaxed",
+      loose: "leading-loose",
+    },
   },
   defaultVariants: {
     variant: "p12",
@@ -55,8 +80,8 @@ export const typographyVariants = cva("", {
   },
 });
 
-const Typography: React.FC<TypographyProps> = ({ variant, fontWeight, fontStyle, children, ...props }) => {
-  return <p className={cn(typographyVariants({ variant, fontWeight, fontStyle }))}>{children}</p>;
+const Typography: React.FC<TypographyProps> = ({ variant, fontWeight, fontStyle, lineHeight, children, ...props }) => {
+  return <p className={cn(typographyVariants({ variant, fontWeight, fontStyle, lineHeight }))}>{children}</p>;
 };
 
 export default Typography;
