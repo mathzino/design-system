@@ -1,6 +1,6 @@
 import Tag, { TVariantTag } from "./tag";
 import { Meta, StoryObj } from "@storybook/react";
- 
+
 const meta: Meta<typeof Tag> = {
   title: "Tag",
   component: Tag,
@@ -16,7 +16,7 @@ export default meta;
 type Story = StoryObj<typeof Tag>;
 
 // Regular
-export const Text: Story = {
+export const Default: Story = {
   args: {
     variant: TVariantTag.default,
     children: "Default",
