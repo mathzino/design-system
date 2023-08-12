@@ -19,6 +19,6 @@ type Story = StoryObj<typeof Tooltip>;
 export const Default: Story = {
   args: {
     variant: TVariantTooltip.default,
-    children: "Hover Content",
+    children: "Thank you for using eskit UI. Have a nice day!",
   },
 };
