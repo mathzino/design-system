@@ -5,13 +5,13 @@ import { cn } from "../../../lib/utils";
 import { cva } from "class-variance-authority";
 
 // Define the props interface
-enum ESizeButton {
+export enum ESizeButton {
   sm = "sm",
   md = "md",
   lg = "lg",
 }
 
-enum EVariantButton {
+export enum EVariantButton {
   default = "default",
   outline = "outline",
 }
