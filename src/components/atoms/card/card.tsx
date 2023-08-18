@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ children, ...props }) => {
             <div className={topStyle}>Card Title</div>
             <div className={middleStyle}>{children}</div>
             <div className={bottomStyle}>
-                <Button size={ESizeButton.md} variant={EVariantButton.outline} title="Label" />
+                <Button size={ESizeButton.md} variant={EVariantButton.back} title="Label" />
                 <Button size={ESizeButton.md} variant={EVariantButton.default} title="Label" />
             </div>
         </div>
