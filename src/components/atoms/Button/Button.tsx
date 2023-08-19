@@ -8,6 +8,18 @@ export type TSizeButton = "sm" | "md" | "lg";
 
 export type TVariantButton = "default" | "outline";
 
+// Define the props interface
+export enum ESizeButton {
+  sm = "sm",
+  md = "md",
+  lg = "lg",
+}
+
+export enum EVariantButton {
+  default = "default",
+  outline = "outline",
+}
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: TSizeButton;
   children?: ReactNode;
