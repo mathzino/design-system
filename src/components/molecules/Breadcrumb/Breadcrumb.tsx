@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Typography, { TFontWeight, TVariantTypography } from "src/Components/atoms/typography/typography";
+import Typography, { EFontWeight } from "src/Components/atoms/typography/typography";
 export type TBreadcrumbsItem = {
   label: string;
   path: string;
@@ -19,11 +19,11 @@ const Breadcrumbs: FC<PropsBreadcrumb> = ({ breadcrumbs }) => {
           <div className="flex">
             {index > firstIndex && (
               <div>
-                <Typography fontWeight={TFontWeight.semiBold}>/</Typography>
+                <Typography fontWeight={"semibold"}>/</Typography>
               </div>
             )}
             <div key={label} className=" px-1 ">
-              <Typography fontWeight={TFontWeight.medium}>
+              <Typography fontWeight={EFontWeight.medium}>
                 <div>{label}</div>
               </Typography>
             </div>
@@ -32,11 +32,11 @@ const Breadcrumbs: FC<PropsBreadcrumb> = ({ breadcrumbs }) => {
           <div className=" flex">
             {index > firstIndex && (
               <div>
-                <Typography fontWeight={TFontWeight.semiBold}>/</Typography>
+                <Typography fontWeight={"semibold"}>/</Typography>
               </div>
             )}
             <div key={label} className=" flex flex-row hover:bg-gray-100 px-1 rounded-sm">
-              <Typography fontWeight={TFontWeight.semiBold}>
+              <Typography fontWeight={"semibold"}>
                 <div>
                   <a href={path}>{label}</a>
                 </div>

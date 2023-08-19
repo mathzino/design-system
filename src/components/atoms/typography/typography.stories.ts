@@ -1,21 +1,21 @@
-import Typography, { TFontStyle, TFontWeight, TVariantTypography } from "./typography";
+import Typography, { EFontStyle, EFontWeight, EVariantTypography } from "./typography";
 import { Meta, StoryObj } from "@storybook/react";
- 
+
 const meta: Meta<typeof Typography> = {
   title: "Typography",
   component: Typography,
   tags: ["autodocs"],
   argTypes: {
     variant: {
-      options: TVariantTypography,
+      options: EVariantTypography,
       control: { type: "select" },
     },
     fontStyle: {
-      options: TFontStyle,
+      options: EFontStyle,
       control: { type: "radio" },
     },
     fontWeight: {
-      options: TFontWeight,
+      options: EFontWeight,
       control: { type: "select" },
     },
   },
@@ -26,9 +26,9 @@ type Story = StoryObj<typeof Typography>;
 // Regular
 export const Text: Story = {
   args: {
-    variant: TVariantTypography.h1,
-    fontStyle: TFontStyle.italic,
-    fontWeight: TFontWeight.medium,
+    variant: "h1",
+    fontStyle: "italic",
+    fontWeight: "medium",
     children: "tes",
   },
 };

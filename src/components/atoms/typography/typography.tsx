@@ -1,8 +1,10 @@
 import React, { ReactNode } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "../../../lib/utils";
- 
-export enum TVariantTypography {
+import { type } from "os";
+
+export type TVariantTypography = "h1" | "h2" | "h3" | "h4" | "h5" | "p18" | "p16" | "p12" | "p10" | "l18" | "l16" | "l14" | "l12" | "l10";
+export enum EVariantTypography {
   h1 = "h1",
   h2 = "h2",
   h3 = "h3",
@@ -18,11 +20,11 @@ export enum TVariantTypography {
   l12 = "l12",
   l10 = "l10",
 }
-export enum TFontStyle {
+export enum EFontStyle {
   italic = "italic",
   noItalic = "noItalic",
 }
-export enum TFontWeight {
+export enum EFontWeight {
   light = "light",
   medium = "medium",
   semiBold = "semibold",
@@ -30,6 +32,8 @@ export enum TFontWeight {
   extraBold = "extrabold",
   black = "black",
 }
+export type TFontStyle = "italic" | "noItalic";
+export type TFontWeight = "medium" | "semibold" | "bold" | "extrabold" | "black";
 
 interface TypographyProps extends React.HTMLAttributes<HTMLParagraphElement>, VariantProps<typeof typographyVariants> {
   variant?: TVariantTypography;
@@ -74,7 +78,7 @@ export const typographyVariants = cva("", {
 });
 
 const Typography: React.FC<TypographyProps> = ({ variant, fontWeight, fontStyle, children, ...props }) => {
-  return <p className={cn(typographyVariants({ variant, fontWeight, fontStyle, }))}>{children}</p>;
+  return <p className={cn(typographyVariants({ variant, fontWeight, fontStyle }))}>{children}</p>;
 };
 
 export default Typography;
