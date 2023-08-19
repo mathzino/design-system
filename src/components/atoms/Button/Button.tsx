@@ -1,33 +1,25 @@
 // import { cva } from "class-variance-authority";
-import React, { ButtonHTMLAttributes } from "react";
-import Typography, { TFontWeight, TVariantTypography } from "../typography/typography";
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
+import Typography, { TVariantTypography } from "../typography/typography";
 import { cn } from "../../../lib/utils";
 import { cva } from "class-variance-authority";
 
-// Define the props interface
-enum ESizeButton {
-  sm = "sm",
-  md = "md",
-  lg = "lg",
-}
+export type TSizeButton = "sm" | "md" | "lg";
 
-enum EVariantButton {
-  default = "default",
-  outline = "outline",
-}
+export type TVariantButton = "default" | "outline";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  size?: ESizeButton;
-  title?: string;
-  variant?: EVariantButton;
+  size?: TSizeButton;
+  children?: ReactNode;
+  variant?: TVariantButton;
 }
 
-const buttonVariants = cva("rounded-lg  px-2 flex items-center py-1", {
+const buttonVariants = cva("rounded-lg  px-2 flex items-center py-1 justify-center", {
   variants: {
     size: {
-      sm: "h-6",
-      md: "h-9",
-      lg: "h-11",
+      sm: "h-6 min-w-[16px]",
+      md: "h-9 min-w-[80px]",
+      lg: "h-11 min-w-[100px]",
     },
     variant: {
       default: "bg-blue-500 text-white",
@@ -41,18 +33,18 @@ const buttonVariants = cva("rounded-lg  px-2 flex items-center py-1", {
 
 const Button: React.FC<ButtonProps> = React.forwardRef<HTMLButtonElement, ButtonProps>(({ title, children, size, variant, ...props }, ref) => {
   let variantTypography: TVariantTypography;
-  if (size === ESizeButton.sm) {
-    variantTypography = TVariantTypography.l10;
-  } else if (size === ESizeButton.md) {
-    variantTypography = TVariantTypography.l16;
+  if (size === "sm") {
+    variantTypography = "l10";
+  } else if (size === "md") {
+    variantTypography = "l16";
   } else {
-    variantTypography = TVariantTypography.l18;
+    variantTypography = "l18";
   }
 
   return (
     <button ref={ref} className={cn(buttonVariants({ size, variant }))} {...props}>
-      <Typography variant={variantTypography} fontWeight={TFontWeight.semiBold}>
-        {title}
+      <Typography variant={variantTypography} fontWeight={"semibold"}>
+        {children}
       </Typography>
     </button>
   );
