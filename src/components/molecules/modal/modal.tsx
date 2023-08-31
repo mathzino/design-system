@@ -33,8 +33,8 @@ const Modal: React.FC<ModalProps> = ({ title, buttonName1, buttonName2, children
       <div>
          <Button size={ESizeButton.lg} variant={EVariantButton.default} title="Open" onClick={toggleModal} />
 
-         <div className={`w-[100vw] h-[100vh] top-0 left-0 right-0 bottom-0 fixed transition duration-500 ${modal ? 'visible' : 'invisible'}`}>
-            <div onClick={toggleModal} className={`w-[100vw] h-[100vh] top-0 left-0 right-0 bottom-0 fixed transition-colors duration-[400ms] ${modal ? 'bg-[rgba(49,49,49,0.8)]' : ''}`}></div>
+         <div className={`w-[100vw] h-[100vh] top-0 left-0 right-0 bottom-0 fixed transition-all duration-[400ms] ${modal ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+            <div onClick={toggleModal} className={`w-[100vw] h-[100vh] top-0 left-0 right-0 bottom-0 fixed transition-colors duration-[400ms] ${modal ? 'bg-[rgba(49,49,49,0.8)]' : 'bg-white'}`}></div>
             <div className={`${cn(modalVariants({}))} ${modal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
                <div className="px-6 py-3 font-medium text-base text-[#151A1E]">
                   {title}
@@ -49,6 +49,7 @@ const Modal: React.FC<ModalProps> = ({ title, buttonName1, buttonName2, children
             </div>
          </div>
       </div>
+
    );
 };
 
