@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Typography, { TFontWeight, TVariantTypography } from "../../atoms/typography/typography";
+import Typography, { TFontWeight } from "../../atoms/typography/typography";
 export type TBreadcrumbsItem = {
   label: string;
   path: string;
