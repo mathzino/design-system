@@ -1,4 +1,3 @@
-// import { cva } from "class-variance-authority";
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import Typography, { TVariantTypography } from "../typography/typography";
 import { cn } from "../../../lib/utils";
@@ -6,9 +5,8 @@ import { cva } from "class-variance-authority";
 
 export type TSizeButton = "sm" | "md" | "lg";
 
-export type TVariantButton = "default" | "outline";
+export type TVariantButton = "default" | "outline" | "back";
 
-// Define the props interface
 export enum ESizeButton {
   sm = "sm",
   md = "md",
@@ -18,6 +16,7 @@ export enum ESizeButton {
 export enum EVariantButton {
   default = "default",
   outline = "outline",
+  back = "back",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -34,8 +33,9 @@ const buttonVariants = cva("rounded-lg  px-2 flex items-center py-1 justify-cent
       lg: "h-11 min-w-[100px]",
     },
     variant: {
-      default: "bg-blue-500 text-white",
-      outline: "border-blue-500  border-2 text-blue-500",
+      default: "px-2.5 bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300",
+      outline: "border-blue-500 border-2 text-blue-500",
+      back: "border-slate-500 border-2 text-slate-500 hover:bg-slate-600 hover:border-slate-600 hover:text-white active:bg-slate-700 focus:outline-none focus:ring focus:ring-slate-300",
     },
   },
   defaultVariants: {

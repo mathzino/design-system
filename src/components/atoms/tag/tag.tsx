@@ -22,15 +22,15 @@ interface TagProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<ty
 export const tagVariants = cva("", {
   variants: {
     variant: {
-      default: "inline bg-[#f4f4f4] rounded-lg text-2xl text-[#151A1E] font-medium px-3.5 py-1",
-      danger: "inline bg-[#fdeeee] rounded-lg text-2xl text-[#E53E3E] font-medium px-3.5 py-1",
-      success: "inline bg-[#edf7f2] rounded-lg text-2xl text-[#38A169] font-medium px-3.5 py-1",
-      warning: "inline bg-[#fffdd4] rounded-lg text-2xl text-[#B2AC00] font-medium px-3.5 py-1",
-      orange:"inline bg-[#ffeee6] rounded-lg text-2xl text-[#FF4A00] font-medium px-3.5 py-1",
-      small: "inline bg-[#e8f4fc] rounded-lg text-base text-[#007EDB] font-medium px-2 py-0.5",
-      base: "inline bg-[#e8f4fc] rounded-lg text-lg text-[#007EDB] font-medium px-2.5 py-0.5",
-      primary: "inline bg-[#e8f4fc] rounded-lg text-2xl text-[#007EDB] font-medium px-3.5 py-1",
-      secondary: "inline bg-[#eee9f4] rounded-lg text-2xl text-[#430B88] font-medium px-3.5 py-1",
+      default: "inline bg-[#f4f4f4] rounded-lg text-xs text-[#151A1E] font-medium px-2.5 pt-1 pb-1.5",
+      danger: "inline bg-[#fdeeee] rounded-lg text-xs text-[#E53E3E] font-medium px-2.5 pt-1 pb-1.5",
+      success: "inline bg-[#edf7f2] rounded-lg text-xs text-[#38A169] font-medium px-2.5 pt-1 pb-1.5",
+      warning: "inline bg-[#fffdd4] rounded-lg text-xs text-[#B2AC00] font-medium px-2.5 pt-1 pb-1.5",
+      orange:"inline bg-[#ffeee6] rounded-lg text-xs text-[#FF4A00] font-medium px-2.5 pt-0.5 pb-1",
+      small: "inline bg-[#e8f4fc] rounded-lg text-[10px] text-[#007EDB] font-medium px-2 pt-0.5 pb-1",
+      base: "inline bg-[#e8f4fc] rounded-lg text-[11px] text-[#007EDB] font-medium px-2.5 pt-0.5 pb-1",
+      primary: "inline bg-[#e8f4fc] rounded-lg text-xs text-[#007EDB] font-medium px-2.5 pt-1 pb-1.5",
+      secondary: "inline bg-[#eee9f4] rounded-lg text-xs text-[#430B88] font-medium px-2.5 pt-1 pb-1.5",
     },
   },
   defaultVariants: {
