@@ -1,4 +1,3 @@
-// import { cva } from "class-variance-authority";
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import Typography, { TVariantTypography } from "../typography/typography";
 import { cn } from "../../../lib/utils";
@@ -8,7 +7,6 @@ export type TSizeButton = "sm" | "md" | "lg";
 
 export type TVariantButton = "default" | "outline" | "back";
 
-// Define the props interface
 export enum ESizeButton {
   sm = "sm",
   md = "md",
