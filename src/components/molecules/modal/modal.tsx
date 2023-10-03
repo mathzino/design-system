@@ -8,6 +8,7 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<
    buttonName1?: string;
    buttonName2?: string;
    children?: ReactNode;
+   condition?: boolean;
 }
 
 export const modalVariants = cva("absolute top-1/2 left-1/2 bg-white -translate-x-1/2 -translate-y-1/2 rounded-xl max-w-[600px] min-w-[300px] transition-all duration-[400ms]", {
@@ -16,8 +17,8 @@ export const modalVariants = cva("absolute top-1/2 left-1/2 bg-white -translate-
 });
 
 
-const Modal: React.FC<ModalProps> = ({ title, buttonName1, buttonName2, children, ...props }) => {
-   const [modal, setModal] = useState<boolean>(false);
+const Modal: React.FC<ModalProps> = ({ title, buttonName1, buttonName2, children, condition=true, ...props }) => {
+   const [modal, setModal] = useState<boolean>(condition);
 
    const toggleModal = () => {
       setModal(!modal);
@@ -31,8 +32,6 @@ const Modal: React.FC<ModalProps> = ({ title, buttonName1, buttonName2, children
 
    return (
       <div>
-         <Button size={ESizeButton.lg} variant={EVariantButton.default} title="Open" onClick={toggleModal} />
-
          <div className={`w-[100vw] h-[100vh] top-0 left-0 right-0 bottom-0 fixed transition-all duration-[400ms] ${modal ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
             <div onClick={toggleModal} className={`w-[100vw] h-[100vh] top-0 left-0 right-0 bottom-0 fixed transition-colors duration-[400ms] ${modal ? 'bg-[rgba(49,49,49,0.8)]' : 'bg-white'}`}></div>
             <div className={`${cn(modalVariants({}))} ${modal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
@@ -43,8 +42,8 @@ const Modal: React.FC<ModalProps> = ({ title, buttonName1, buttonName2, children
                   {children}
                </div>
                <div className="flex items-center justify-end gap-2 px-6 py-5">
-                  <Button size={ESizeButton.md} variant={EVariantButton.back} title={buttonName1} onClick={toggleModal} />
-                  <Button size={ESizeButton.md} variant={EVariantButton.default} title={buttonName2} />
+                  <Button size={ESizeButton.md} variant={EVariantButton.back} children={buttonName1} onClick={toggleModal} />
+                  <Button size={ESizeButton.md} variant={EVariantButton.default} children={buttonName2} />
                </div>
             </div>
          </div>
