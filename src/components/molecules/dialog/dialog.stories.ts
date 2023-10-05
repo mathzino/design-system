@@ -7,7 +7,7 @@ const meta: Meta<typeof Dialog> = {
   tags: ["autodocs"],
   argTypes: {
     variant: {
-      options: ['success', 'danger', 'alert'],
+      options: ['success', 'danger', 'warning'],
       control: { type: "select" },
     },
   }
