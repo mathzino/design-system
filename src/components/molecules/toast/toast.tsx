@@ -37,7 +37,7 @@ export const toastVariants = cva("", {
 });
 
 
-const Toast: React.FC<ToastProps> = ({ variant, position, condition=true, ...props }) => {
+const Toast: React.FC<ToastProps> = ({ variant, position, condition=false, ...props }) => {
    const [toast, setToast] = useState<boolean>(condition);
 
    const toggleToast = () => {

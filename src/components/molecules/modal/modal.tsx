@@ -11,13 +11,13 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<
    condition?: boolean;
 }
 
-export const modalVariants = cva("absolute top-1/2 left-1/2 bg-white -translate-x-1/2 -translate-y-1/2 rounded-xl max-w-[600px] min-w-[300px] transition-all duration-[400ms]", {
+export const modalVariants = cva("absolute top-1/2 left-1/2 bg-white -translate-x-1/2 -translate-y-1/2 rounded-xl w-[600px] transition-all duration-[400ms]", {
    variants: {},
    defaultVariants: {},
 });
 
 
-const Modal: React.FC<ModalProps> = ({ title, buttonName1, buttonName2, children, condition=true, ...props }) => {
+const Modal: React.FC<ModalProps> = ({ title, buttonName1, buttonName2, children, condition=false, ...props }) => {
    const [modal, setModal] = useState<boolean>(condition);
 
    const toggleModal = () => {
