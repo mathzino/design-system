@@ -16,5 +16,6 @@ export const Default: Story = {
     buttonName1: "Close",
     buttonName2: "Label",
     children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident perferendis suscipit officia recusandae, eveniet quaerat assumenda id fugit, dignissimos maxime non natus placeat.",
+    condition: true,
   },
 };
