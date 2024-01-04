@@ -13,6 +13,7 @@ export const Default: Story = {
     title: "Modal Title",
     open: true,
     children: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident perferendis suscipit officia recusandae, eveniet quaerat assumenda id fugit, dignissimos maxime non natus placeat.",
+
     handleClickOuterModal: () => console.log("run"),
   },
 };
