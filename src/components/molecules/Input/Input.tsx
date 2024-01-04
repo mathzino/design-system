@@ -1,10 +1,8 @@
 import { cva } from "class-variance-authority";
 import { InputHTMLAttributes } from "react";
-import { UseFormRegister, FieldError } from "react-hook-form";
 import { cn } from "../../../lib/utils";
 
 interface IInput extends Omit<InputHTMLAttributes<HTMLInputElement>, "name"> {
-  register: UseFormRegister<any>;
   errorMessage?: string | undefined;
   label?: string;
   name: string;
@@ -22,12 +20,12 @@ const inputVariants = cva("", {
   },
 });
 
-export default function Input({ register, errorMessage, name, label, type }: IInput) {
-  if (type == "text-area") {
+export default function Input({ errorMessage, name, label, type }: IInput) {
+  if (type === "text-area") {
     return (
       <div>
         <label className="block text-gray-700 text-sm font-bold mb-2">{label}</label>
-        <textarea {...register(name)} className={cn(inputVariants({ status: errorMessage ? "error" : "default" }))} id={name} />
+        <textarea className={cn(inputVariants({ status: errorMessage ? "error" : "default" }))} id={name} />
         {errorMessage && <p className="text-red-500 text-xs italic">{errorMessage}</p>}
       </div>
     );
@@ -35,7 +33,7 @@ export default function Input({ register, errorMessage, name, label, type }: IIn
   return (
     <div>
       <label className="block text-gray-700 text-sm font-bold mb-2">{label}</label>
-      <input {...register(name)} className={cn(inputVariants({ status: errorMessage ? "error" : "default" }))} id={name} type={type} />
+      <input className={cn(inputVariants({ status: errorMessage ? "error" : "default" }))} id={name} type={type} />
       {errorMessage && <p className="text-red-500 text-xs italic">{errorMessage}</p>}
     </div>
   );
