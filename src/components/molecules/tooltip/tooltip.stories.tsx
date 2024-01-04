@@ -20,6 +20,6 @@ export const Default: Story = {
   args: {
     title: "this tooltipp!!",
     variant: "default",
-    // children: <Button>tes</Button>,
+    children: <Button>Test Button</Button>,
   },
 };

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "../../../lib/utils";
-import Button, { ESizeButton, EVariantButton } from "../../atoms/Button/Button";
 import successIcon from "../toast/assets/icon-success.svg";
 import errorIcon from "../toast/assets/icon-eror.svg";
 import loadingIcon from "../toast/assets/icon-loading.svg";
